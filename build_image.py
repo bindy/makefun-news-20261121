@@ -83,7 +83,7 @@ def main():
     # Header
     d.rectangle([0, 0, W, 88], fill=(15, 23, 42))
     d.text((16, 12), "THE WORLD IN ONE PICTURE", font=font(30, True), fill=(255, 255, 255))
-    d.text((16, 52), "SATURDAY, 21 NOVEMBER 2026  •  30 STORIES  •  7 REGIONS", font=font(17), fill=(191, 219, 254))
+    d.text((16, 52), "SATURDAY, 21 NOVEMBER 2026  •  30 STORIES  •  12 SECTIONS", font=font(17), fill=(191, 219, 254))
     d.text((W - 16, 52), "make.fun", font=font(17, True), fill=(147, 197, 253), anchor="ra")
     # Grid: 5 cols x 6 rows
     margin, gap = 12, 8
@@ -99,6 +99,7 @@ def main():
         d.rounded_rectangle([x, y, x + cw, y + ch], radius=8, fill=(248, 250, 252), outline=(226, 232, 240))
         d.rounded_rectangle([x, y, x + cw, y + 5], radius=3, fill=color)
         d.text((x + 8, y + 11), region, font=font(10, True), fill=color)
+        d.text((x + cw - 8, y + 11), f"{i + 1:02d}", font=font(10, True), fill=color, anchor="ra")
         lines = wrap(d, head, font(13, True), cw - 16)[:3]
         ly = y + 30
         for ln in lines:
